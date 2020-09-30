@@ -1,21 +1,64 @@
 package Library;
 
-public abstract class Book {
+public class Book extends Item{
 	protected String title;
 	protected String author;
-	protected String type;
 	protected int pages;
 	
-	public abstract void setTitle(String title);
-	public abstract String getTitle();
-	
-	public abstract void setAuthor(String author);
-	public abstract String getAuthor();
-	
-	public abstract void setPages(int pages);
-	public abstract int getPages();
-	
-	public abstract void setType(String type);
-	public abstract String getType();
+	public Book() {
+		this.title = "Unknown";
+		this.author = "Unknown";
+		this.genre = "Unknown";
+		this.pages = 0;
+		this.itemType = "Unknown";
 	}
+	
+	public Book(String title, String author, String genre, int pages, String itemType) {
+		this.title = title;
+		this.author = author;
+		this.genre = genre;
+		this.pages = pages;
+		this.itemType = itemType;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getTitle() {
+		return this.title;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public String getAuthor() {
+		return this.author;
+	}
+	
+	@Override
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+	
+	@Override
+	public String getGenre() {
+		return this.genre;
+	}
+	
+	public void setPages(int pages) {
+		this.pages = pages;
+	}
+	public int getPages() {
+		return this.pages;
+	}
+	
+	@Override
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
+	}
+	@Override
+	public String getItemType() {
+		return this.itemType;
+	}
+	
 }
